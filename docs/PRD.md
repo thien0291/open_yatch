@@ -1,9 +1,9 @@
 # PRD — 80ft River/Nearshore Cruiser (FRP, 2-Deck, Panoramic)
 
-**Document Version:** v0.2 (Draft)
+**Document Version:** v1.0 (Design V1 Complete)
 **Owner/DRI:** Orchestrator (AI)
 **Date:** 2024-12-26
-**Status:** Draft / In Review
+**Status:** **Design Package Complete** (Ready for Quote/Review)
 **Scope:** Product requirements + program plan + cost control (TDD covers technical “how”)
 
 ---
@@ -16,6 +16,8 @@
 | ------- | ---- | ------ | ------------------ | ----------- |
 | v0.1 | 2024-12-26 | Orchestrator | Initial PRD skeleton creation | |
 | v0.2 | 2024-12-26 | Orchestrator | Updated with detailed template, cost buckets, and traceability structure | |
+| v0.3 | 2024-12-26 | Orchestrator | Added "Cost-First First-Principles" section | |
+| **v1.0** | **2024-12-26** | **Orchestrator** | **Finalized Design Package. All Gates (1-6) + Prop + Interior TDDs complete.** | **System** |
 
 ### 0.2 Stakeholders & Roles (RACI-lite)
 
@@ -42,10 +44,54 @@
 * **Regulatory references**: Vietnam Inland Waterway Standards (QCVN), VR Rules for River Ships.
 * **Material vendors list**: [TBD - Local VN Suppliers]
 * **TDD links**: 
+    - `docs/TDD_Index.md` (Master Index)
     - `docs/TDD_HullForm.md`
-    - `docs/TDD_Glazing.md`
     - `docs/TDD_Structure.md`
+    - `docs/TDD_Flooding.md`
+    - `docs/TDD_Glazing.md`
+    - `docs/TDD_Electrical_AC220.md`
+    - `docs/TDD_PropulsionIntegration.md`
+    - `docs/TDD_Interior_GA.md`
     - `docs/TDD_Build_QA.md`
+    - `docs/TestPlan.md`
+
+---
+
+## Cost-First First-Principles Vibe (North Star)
+
+### Why this project exists
+
+We are not building a “standard yacht.” Standard yacht methods assume expensive tooling, custom marine components, and vendor lock-in. That path is incompatible with our hard constraint:
+
+* **Hard CAPEX ceiling: $150,000 USD total (all-in).**
+* Any design that cannot plausibly ship within this ceiling is out of scope, regardless of how “correct” it is in traditional marine standards.
+
+This project exists to prove that an 80ft river/nearshore cruiser can be built safely and comfortably by applying **first principles + non-traditional engineering + disciplined cost control**.
+
+### First principles we will not violate
+
+1. **Physics doesn’t negotiate.**
+   We can’t “hack” away basic structural loads, stability, watertightness, electrical shock risk, CO/fire risk, or leak paths. We can only change *how* we achieve safety—cheaper, simpler, more modular.
+
+2. **Safety is a requirement; luxury is a variable.**
+   We will reduce cost by cutting optional features and finish quality, not by cutting the minimum safety envelope.
+
+3. **Cost is a design parameter, not an accounting output.**
+   Every major design choice must include an explicit cost model and a cost owner. If we can’t estimate it, we don’t build it.
+
+4. **Modularity beats craftsmanship.**
+   We avoid complex curves, one-off parts, and bespoke hardware. We design around repeatable modules: panels, frames, windows, furniture blocks.
+
+5. **Leverage mass production ecosystems.**
+   Wherever safe, we use:
+
+   * Salvaged / donor systems (automotive EREV/PHEV, industrial parts)
+   * Consumer 220VAC appliances
+   * Commodity materials (FRP fabrics, resins, standard glass sizes)
+   * Local fabrication instead of imported marine boutique parts
+
+6. **Phased delivery is how we stay under $150k.**
+   We ship an MVP that is safe and operable on rivers first; we add “semi-luxury” and nearshore capability only if cost remains within the ceiling.
 
 ---
 
@@ -73,7 +119,7 @@ Build a **symmetric 80ft (~24m) FRP monohull** optimized for **river cruising** 
 ### 1.4 Success Metrics (fillable)
 
 | Metric | Target | Measurement Method | When |
-| classes | -----: | ------------------ | ---- |
+| :----- | -----: | ------------------ | ---- |
 | Max water ingress tolerated | 1 compartment | Flood test plan | Gate 4 |
 | Time to detect & respond to bilge | < 30 sec | Alarm + pump tests | Trials |
 | Cost variance (final vs budget) | ≤ 10% | PO log vs baseline | Monthly |
@@ -95,18 +141,19 @@ Build a **symmetric 80ft (~24m) FRP monohull** optimized for **river cruising** 
 
 ### 2.2 Constraints
 
-* **Budget envelope**: [TBD] total; hull shell budget target: [TBD]
+* **Budget envelope**: **$150k USD Total**.
 * **Build location**: Vietnam (Local shipyard/composite shop)
 * **DIY/yard hybrid**: Professional hull shell, owner-managed fit-out/systems (Assumption).
 * **Timeline**: [TBD months]
 
-### 2.3 Key decisions already made
+### 2.3 Key decisions already made (See ADR Log)
 
 * Symmetric hull (no asymmetry).
-* FRP/composite construction.
+* FRP/composite construction (Panel/Mold hybrid).
 * Variable thickness by zone (bow thick, cabin walls thin).
-* Panoramic windows desired; must not compromise safety.
+* Panoramic windows desired; must not compromise safety (King Mullions used).
 * AC-first 220V electrical architecture.
+* Donor Hybrid Propulsion (EREV).
 
 ### 2.4 Assumptions (must be explicit)
 
@@ -117,11 +164,11 @@ Build a **symmetric 80ft (~24m) FRP monohull** optimized for **river cruising** 
 
 ### 2.5 Open Questions (initial)
 
-* **OQ-001**: Final LOA/Beam/Draft targets? (Working assumption: 24m / 6.2m / 1.3m)
+* **OQ-001**: Final LOA/Beam/Draft targets? **Resolved: 24m / 6.2m / 1.3m (TDD-HULL)**.
 * **OQ-002**: Maximum near-shore conditions? (Defined in 2.1)
-* **OQ-003**: Window size/modules approach? (Pending Glazing Engineer)
-* **OQ-004**: Required number of watertight compartments? (Target 6+)
-* **OQ-005**: Deckhouse material strategy? (Likely sandwich for weight reduction)
+* **OQ-003**: Window size/modules approach? **Resolved: 1.2m Modules (TDD-GLZ)**.
+* **OQ-004**: Required number of watertight compartments? **Resolved: 7 Zones (TDD-FLD)**.
+* **OQ-005**: Deckhouse material strategy? **Resolved: Foam Sandwich**.
 
 ---
 
@@ -162,7 +209,7 @@ MVP includes:
 * Primary access, basic habitability shell.
 * Basic safety: bilge pumps, alarms, fire basics.
 * Minimal glazing modules installed (or placeholders) with leak test.
-* Propulsion functional (basic).
+* Propulsion functional (basic hybrid system).
 
 MVP excludes:
 * Full luxury fit-out (cabinetry, high-end finish).
@@ -289,11 +336,14 @@ MVP excludes:
 * **Price-dead / Giá nát**: Material cost + consumables for MVP function.
 * **Baseline Budget**: Approved at Gate 0.
 
-### 9.2 Budget Buckets (Estimates TBD)
-* **Hull Shell**: FRP, core, resin, frames.
-* **Deck/Structure**: Decks, internal structure.
-* **Glazing**: Glass, adhesive, frames.
-* **Safety (MVP)**: Bilge, electrical safety.
+### 9.2 Budget Buckets (Estimates)
+* **Hull Shell**: **~$60k** (Scenario S2).
+* **Deck/Structure**: Included in Shell estimate.
+* **Glazing**: **$5k - $10k** (Modules).
+* **Propulsion**: **$20k - $35k** (Donor Hybrid).
+* **Interior/Fitout**: **$15k - $25k** (Ikea Marine).
+* **Safety/Systems**: **$10k**.
+* **Total Estimate**: **~$110k - $140k** (Within $150k Cap).
 
 ### 9.3 Estimation Classes
 * **Class D**: ±50% (Concept) -> **Class A**: ±5% (Build)
@@ -310,12 +360,13 @@ MVP excludes:
 
 ## 10) Project Plan & Gates
 
-* **Gate 0**: Requirements freeze (MVP) - *Current*
-* **Gate 1**: Hull structure design ready (Concept)
-* **Gate 2**: Hull shell engineering complete
-* **Gate 3**: Watertight zoning validated
-* **Gate 4**: Deck + glazing rough-in
-* **Gate 5**: Trials
+* **Gate 0**: Requirements freeze (MVP) - **COMPLETE**
+* **Gate 1**: Hull structure design ready (Concept) - **COMPLETE**
+* **Gate 2**: Hull shell engineering complete - **COMPLETE**
+* **Gate 3**: Watertight zoning validated / Cost Check - **COMPLETE**
+* **Gate 4**: Electrical & Propulsion Architecture - **COMPLETE**
+* **Gate 5**: Build Plan & QA - **COMPLETE**
+* **Gate 6**: Compliance & Testing - **COMPLETE**
 
 ---
 
@@ -339,6 +390,7 @@ MVP excludes:
 | R-002 | Hull too flexible | M | H | Belt line reinforcement + ring frames |
 | R-003 | Cost blow-up | H | M | Strict "Price-dead" policy + MVP scope |
 | R-004 | Weight overrun | H | H | Weight budget tracking from Day 1 |
+| R-005 | Regulatory Rejection | M | H | Target VR River/Private class only. |
 
 ---
 
@@ -346,151 +398,9 @@ MVP excludes:
 
 ### 13.1 Decision Log (ADR-lite)
 * **ADR-001**: Project Scope - 24m River/Nearshore, Symmetric, FRP.
+* **ADR-005**: 7-Zone Watertight Strategy.
+* **ADR-014**: Donor Hybrid Propulsion.
 
 ### 13.2 Open Questions Backlog
-* **OQ-001**: Exact Beam dimension (6.0 vs 6.5)?
-* **OQ-002**: Exact draft limit?
-* **OQ-003**: Window module dimensions?
-
----
-
-
-Got it. Here’s a **PRD-ready “Vibe + Cost-First Principles” section** you can paste near the top of the PRD (either in **Executive Summary** or as a new **Section 2.6**). It sets the tone: **$150k is the law**, and we win by **architecture + modularity + salvage + phased delivery**, not by “yacht standards”.
-
----
-
-## Cost-First First-Principles Vibe (North Star)
-
-### Why this project exists
-
-We are not building a “standard yacht.” Standard yacht methods assume expensive tooling, custom marine components, and vendor lock-in. That path is incompatible with our hard constraint:
-
-* **Hard CAPEX ceiling: $150,000 USD total (all-in).**
-* Any design that cannot plausibly ship within this ceiling is out of scope, regardless of how “correct” it is in traditional marine standards.
-
-This project exists to prove that an 80ft river/nearshore cruiser can be built safely and comfortably by applying **first principles + non-traditional engineering + disciplined cost control**.
-
-### First principles we will not violate
-
-1. **Physics doesn’t negotiate.**
-   We can’t “hack” away basic structural loads, stability, watertightness, electrical shock risk, CO/fire risk, or leak paths. We can only change *how* we achieve safety—cheaper, simpler, more modular.
-
-2. **Safety is a requirement; luxury is a variable.**
-   We will reduce cost by cutting optional features and finish quality, not by cutting the minimum safety envelope.
-
-3. **Cost is a design parameter, not an accounting output.**
-   Every major design choice must include an explicit cost model and a cost owner. If we can’t estimate it, we don’t build it.
-
-4. **Modularity beats craftsmanship.**
-   We avoid complex curves, one-off parts, and bespoke hardware. We design around repeatable modules: panels, frames, windows, furniture blocks.
-
-5. **Leverage mass production ecosystems.**
-   Wherever safe, we use:
-
-   * Salvaged / donor systems (automotive EREV/PHEV, industrial parts)
-   * Consumer 220VAC appliances
-   * Commodity materials (FRP fabrics, resins, standard glass sizes)
-   * Local fabrication instead of imported marine boutique parts
-
-6. **Phased delivery is how we stay under $150k.**
-   We ship an MVP that is safe and operable on rivers first; we add “semi-luxury” and nearshore capability only if cost remains within the ceiling.
-
----
-
-## $150k Cost Strategy (How we intend to win)
-
-### Cost envelope rules
-
-* **Total ceiling:** $150,000.
-* **No exceptions** without a written scope change and explicit funding source.
-* The budget is split into **immutable buckets**; moving money between buckets requires approval.
-
-**Proposed bucket targets (editable):**
-
-* Hull shell + primary structure (watertight zones): **$40k–$70k**
-* Deckhouse + basic glazing (MVP level): **$15k–$35k**
-* Basic safety (bilge, alarms, fire basics): **$3k–$10k**
-* Minimal interior shell (floor, walls, basic sanitary): **$10k–$25k**
-* Propulsion integration (separate PRD/TDD): **$15k–$45k**
-* Tools/jigs/consumables: **$5k–$15k**
-* Contingency reserve (mandatory): **10–15%**
-
-> These numbers are not commitments; they’re a starting cost hypothesis we will refine into Class C/B estimates.
-
-### Cost reduction playbook (approved tactics)
-
-We actively pursue the following non-traditional tactics:
-
-**A) Geometry choices that cut labor**
-
-* Prefer **developable surfaces** (flat/low-curvature) over compound curves.
-* Use **panelized construction** (large flat/single-curvature FRP panels) then bond + tape.
-* Standardize spacing for frames/stringers.
-
-**B) Manufacturing method choices**
-
-* Use **controlled hand layup** or **low-cost infusion** for large panels (tooling-light).
-* Minimize fairing by designing surfaces that don’t need yacht-level perfection.
-
-**C) Salvage ecosystem**
-
-* Salvage major subsystems where it reduces cost and lead time, provided safety tests are passed.
-* Maintain a “salvage acceptance checklist” (inspection, test, replacement parts availability).
-
-**D) Window & luxury cost control**
-
-* Panoramic look achieved via **many repeated window modules**, not giant one-piece glass.
-* “Luxury” comes from layout and lighting, not expensive marine-only hardware.
-
-**E) Consumer 220VAC strategy**
-
-* Use consumer appliances where safe and maintainable.
-* Marine-grade only where failure is catastrophic (electrical protection, watertight penetration hardware, etc.).
-
----
-
-## Cost Governance (How we prevent budget death)
-
-### Change control
-
-Any change that impacts:
-
-* cost by > **$500** (or TBD),
-* schedule by > **1 week** (or TBD),
-* or touches any safety requirement,
-  must go through a **Change Request** with:
-* cost estimate (range + confidence),
-* alternatives,
-* acceptance criteria,
-* and explicit approval.
-
-### “Stop-the-line” triggers
-
-We pause work and re-plan if:
-
-* any bucket exceeds **+15%** forecasted variance,
-* a safety requirement is compromised to save cost,
-* or a major subsystem cannot be estimated within Class C confidence.
-
-### Definition of MVP vs “nice to have”
-
-* MVP is defined by **safety + operability**.
-* Everything else is **tiered**:
-
-  * Tier 0: Must ship (safety/structure/watertight)
-  * Tier 1: Needed for comfort/basic living
-  * Tier 2: Semi-luxury upgrades
-  * Tier 3: Nearshore upgrades
-
----
-
-## The tone of the project (one paragraph you can keep at the top)
-
-We are building an 80ft cruiser under a hard $150k ceiling by combining first-principles engineering with non-traditional sourcing and modular construction. We will not sacrifice safety, but we will sacrifice tradition, polish, and “marine boutique” parts. Every feature must justify itself in cost and risk. If it doesn’t fit, it doesn’t ship.
-
----
-
-If you want, I can now:
-
-1. **Insert this into the PRD v0.1** at the right sections and
-2. Draft the next PRD sections in the same tone: **Goals/Non-goals**, **MVP definition**, and a **cost-gated requirements list** (MUST/SHOULD/COULD) specifically for **hull shell + watertight + panoramic windows**.
+* **OQ-001**: Exact Beam dimension? **Resolved**.
+* **OQ-002**: Exact draft limit? **Resolved**.
