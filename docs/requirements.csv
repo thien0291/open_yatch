@@ -1,0 +1,10 @@
+ID,Category,Description,Priority,Acceptance Criteria,Owner
+HLR-HULL-001,Hull,Vessel shall have a Length Overall (LOA) of approximately 24m.,MUST,Measurement within +/- 0.5m,Naval Architect
+HLR-HULL-002,Hull,Vessel shall be a symmetric mono-hull optimized for displacement speed.,MUST,Hull form verification,Naval Architect
+HLR-STRUC-001,Structure,Hull and superstructure shall be constructed of FRP (Fiberglass Reinforced Plastic).,MUST,Material spec compliance,Structural Engineer
+HLR-STRUC-002,Structure,Vessel shall have sufficient watertight bulkheads to remain afloat with any single compartment flooded.,MUST,Floodable length calculation,Flooding Engineer
+HLR-GLAZE-001,Glazing,Main deck and flybridge shall feature panoramic glazing.,SHOULD,Visibility analysis,Glazing Engineer
+HLR-ELEC-001,Electrical,Primary electrical distribution shall be 220V AC 50Hz.,MUST,Single line diagram verification,Electrical Engineer
+HLR-SAFE-001,Safety,Vessel shall comply with basic river/nearshore safety regulations (life saving, fire).,MUST,Regulatory checklist,Regulatory Consultant
+HLR-COST-001,Cost,Total structural cost shall be estimated with 3 scenarios (min, balanced, premium).,MUST,BoQ Scenarios,Cost Engineer
+

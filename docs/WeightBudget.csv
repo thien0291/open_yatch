@@ -1,0 +1,14 @@
+Item ID,Group,Description,Weight (kg),CG_x (m from AP),CG_z (m from BL),Status,Owner
+WT-001,Structure,Hull Shell (FRP),12000,,,Est,Structure Eng
+WT-002,Structure,Deck & Superstructure,5000,,,Est,Structure Eng
+WT-003,Structure,Bulkheads,1500,,,Est,Structure Eng
+WT-004,Glazing,Windows & Frames,800,,,Est,Glazing Eng
+WT-005,Machinery,Main Engines/Motors + Gear,1500,,,Est,Prop Eng
+WT-006,Machinery,Generator,500,,,Est,Prop Eng
+WT-007,Systems,Batteries (House/Prop),2000,,,Est,Elec Eng
+WT-008,Tankage,Fuel (Full),3000,,,Est,Prop Eng
+WT-009,Tankage,Water (Fresh + Black),2000,,,Est,Plumbing Eng
+WT-010,Interior,Fit-out & Furniture,4000,,,Est,Interior Eng
+WT-011,Pax,Passengers & Crew (22 pax),1650,,,Est,NA
+TOTAL,,Lightship + Deadweight,~34000,,,Target < 40t,
+
