@@ -1,51 +1,53 @@
-# Master Test Plan
+# TEST-PLAN: Verification & Sea Trials Matrix
 
-**Strategy**: "Test early, test often." Verification of MUST requirements.
+**Version:** v0.1 (Concept)
+**Owner:** Test & Trials Engineer
+**Status:** Draft / Gate 6
+**References:**
+- PRD Requirements: `HLR-*`
 
-## 1. Test Matrix Structure
+---
 
-| Req ID | Test Category | Test Method | Acceptance Criteria | Planned Phase |
-|--------|---------------|-------------|---------------------|---------------|
-| HLR-HULL-001 | Geometry | Measurement | LOA 24m +/- 0.5m | Build (Mold) |
-| HLR-STR-001 | Structure | Visual/Tap | No voids, correct thickness | Build (Laminate) |
-| HLR-FLD-001 | Safety | Hose Test | Zero leaks at bulkheads | Fit-out |
-| HLR-FLD-002 | Safety | Functional | Pump auto-start < 30s | Commissioning |
-| HLR-GLZ-001 | Glazing | Hose Test | Zero leaks at seals | Fit-out |
-| HLR-ELEC-001| Electrical | Megger/Load | Insulation > 1MOhm, Stable V | Commissioning |
-| HLR-STAB-001| Stability | Inclining | GM > Required min | Sea Trials |
+## 1. Test Philosophy
 
-## 2. Key Test Phases
+"Trust but Verify". Every MUST requirement has a corresponding test case.
 
-### Phase 1: Material & Mold (QA)
-* Resin cure test.
-* Gelcoat thickness check.
-* Mold geometry check.
+**Test Categories:**
+- **[CAT-1] Visual/Static**: Inspection on land/dock.
+- **[CAT-2] Functional (Dock)**: System operation at rest (HAT).
+- **[CAT-3] Dynamic (Sea)**: Underway performance (SAT).
 
-### Phase 2: Structural (Hull Shell)
-* Laminate visual inspection (Barcol hardness).
-* Bulkhead bonding integrity check.
-* Tank pressure tests (if integral).
+---
 
-### Phase 3: Watertightness (Pre-launch)
-* **"Rain Test"**: Hose testing windows/hatches.
-* **"Compartment Pressure"** (if applicable) or Chalk test on doors.
+## 2. Verification Matrix
 
-### Phase 4: Systems Commissioning (Dockside)
-* Electrical power-up (Shore power).
-* Bilge pump functional.
-* Engine/Generator start.
+| Test ID | Category | Requirement | Description | Acceptance Criteria |
+|---------|----------|-------------|-------------|---------------------|
+| **T-HULL-01** | CAT-1 | HLR-HULL-001 | **Draft Check** | Draft marks read < 1.35m at full load. |
+| **T-HULL-02** | CAT-3 | PT-002 | **Turning Circle** | Turn 360 deg at cruise speed. Dia < 3x LOA (~72m). |
+| **T-STR-01** | CAT-1 | HLR-STR-002 | **Laminate Audit** | Core samples (cutouts) measured. Thickness matches TDD-STR within -0/+2mm. |
+| **T-FLD-01** | CAT-2 | HLR-FLD-002 | **Bilge Alarm Latency** | Pour water into bilge. Alarm sounds < 30 sec. |
+| **T-FLD-02** | CAT-2 | HLR-FLD-001 | **Hose Test** | Spray bulkheads/windows (2 bar). Zero water ingress inside. |
+| **T-ELEC-01** | CAT-2 | HLR-POW-001 | **RCD Trip Test** | Inject 30mA fault. Breaker trips < 300ms. |
+| **T-ELEC-02** | CAT-2 | HLR-POW-002 | **Full Load Heat Run** | Run all AC loads (AC + Cooktop) 1hr. No cable temp > 60°C. |
+| **T-GLZ-01** | CAT-2 | HLR-GLZ-001 | **Window Leak** | Direct hose stream on seals. Zero drops inside. |
+| **T-STAB-01**| CAT-2 | HLR-SAFE | **Inclining Test** | Move weights, measure heel. Calculated GM > 1.0m. |
+| **T-PERF-01**| CAT-3 | PT-001 | **Max Speed** | Full throttle 5 mins (2-way avg). Speed > 16 km/h. |
 
-### Phase 5: River Trials
-* Speed/RPM runs.
-* Turning circle.
-* Crash stop.
-* Anchor hold.
+---
 
-### Phase 6: Nearshore Trials (Acceptance)
-* Handling in chop (if weather permits).
-* Endurance run (4h).
+## 3. Sea Trial Protocol (Draft)
 
-## 3. Punch List Management
-* All failures logged in `Punch_List.csv` (to be created).
-* Severity: Critical (No sail) vs. Cosmetic (Fix later).
+1.  **Pre-Start Checks**: Fluid levels, seacocks open, safety gear onboard.
+2.  **Dockside Warmup**: Engines idle 15 mins. Temp/Oil pressure stable.
+3.  **Low Speed Maneuvering**: Docking tests, thruster check.
+4.  **Endurance Run**: 1 hour at Cruise Speed. Check temps/vibration.
+5.  **Sprint**: 5 mins at WOT (Wide Open Throttle).
+6.  **Emergency Stop**: Crash stop from cruise. Steering check.
 
+---
+
+## 4. Defect Management
+
+- **Critical Defect**: Prevents boat acceptance (e.g., Leak, Overheating, Stability fail).
+- **Minor Defect**: Punch list item (e.g., Squeaky door, paint flaw).

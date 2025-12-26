@@ -1,30 +1,81 @@
-# Minimum Compliance Documentation
+# COMP-MIN: Minimum Compliance & Certification Strategy
 
-**Goal**: List regulatory requirements and "must-have" documents to avoid legal/safety issues in Vietnam.
+**Version:** v0.1 (Concept)
+**Owner:** Regulatory Consultant
+**Status:** Draft / Gate 6
+**Context:** Vietnam River + Nearshore Operation (Private/Non-Commercial Assumption)
 
-## 1. Regulatory Body (Target)
-* **Primary**: Vietnam Register (VR) - Rules for River Ships (QCVN).
-* **Secondary (Reference)**: ISO Small Craft standards (for structure/stability reference if VR is vague).
+---
 
-## 2. Required Certificates (Anticipated)
-* [ ] Ship Registration Certificate (Giấy đăng ký phương tiện).
-* [ ] Technical Safety & Environmental Protection Certificate (Giấy đăng kiểm).
-* [ ] Radio Safety Certificate (if coastal).
+## 1. Compliance Philosophy
 
-## 3. Mandatory Design Drawings for Approval
-1.  **General Arrangement**: Showing exits, fire safety, capacity.
-2.  **Lines Plan & Hydrostatics**: Stability proof.
-3.  **Structural Profile & Deck Plan**: Scantlings approval.
-4.  **Midship Section**: Laminate details.
-5.  **Schematic Diagrams**: Electrical, Fuel, Bilge, Fire.
-6.  **Tonnage Calculation**: For registration.
+We aim for **"Safe Operation"** compliance rather than full "Class Society" (Lloyds/DNV) notation which is too expensive. We target compliance with local **Vietnam Register (VR)** standards for "River Ships" (SI/SII) or "Pleasure Craft" category.
 
-## 4. Safety Equipment Checklist (Minimums)
-* **Life Jackets**: 100% capacity + 10% reserve.
-* **Life Buoys**: Minimum 4 (2 with light/line).
-* **Fire Extinguishers**: Portable (CO2/Powder) in each cabin + Engine room fixed system.
-* **Signals**: Horn, Nav lights (River spec).
-* **Bilge**: Pumps marked on GA.
+### 1.1 Targeted Classification
+- **Primary**: VR Inland Waterway (River) - Level SI or SII.
+- **Secondary**: Coastal limitation (e.g. max 12nm from shore, wave < 2m).
 
-*Note: This list is a starting point for the Regulatory Consultant to refine.*
+---
 
+## 2. Documentation Package (The "As-Built" Book)
+
+Authorities/Insurers require proof of what was built.
+
+### Essential Drawings (Must Have)
+1.  **General Arrangement (GA)**: Shows exits, fire extinguisher locations, capacity.
+2.  **Structural Plan**: Midship section, laminate schedule used.
+3.  **Electrical Diagram**: Single line diagram (AC & DC) showing fuses/breakers.
+4.  **Stability Booklet**:
+    - Hydrostatics.
+    - Inclining Test Report (GM verification).
+    - Maximum Load conditions.
+
+### Certificates
+1.  **Engine/Genset EIAPP**: Emission certs (if applicable).
+2.  **Life Raft**: Annual inspection cert.
+3.  **Fire Extinguishers**: Service tags.
+
+---
+
+## 3. Operational Limitations (The "Plaque")
+
+A bridge plaque must state:
+
+> **OPERATIONAL LIMITS**
+> - **Max Pax**: 12 Guests + Crew (or as defined by life saving appliances).
+> - **Max Wave Height**: 1.5m (Significant).
+> - **Max Wind**: Beaufort 4.
+> - **Area**: Inland Waters & Coastal < 12nm from safe haven.
+> - **Daylight Only**: (Unless nav lights certified).
+
+---
+
+## 4. Surveyor Sign-Off Points
+
+We recommend engaging a local surveyor (VR or Independent) at these stages:
+
+1.  **Hull Release**: Verify laminate thickness matches drawing.
+2.  **Watertight Test**: Witness flood/hose test of bulkheads.
+3.  **Inclining Test**: Witness the stability test on launch.
+4.  **Sea Trial**: Verify steering, bilge pumps, and speed.
+
+---
+
+## 5. Safety Equipment Checklist (VR Minimums)
+
+- [ ] **Life Jackets**: 150N Solas type (1 per person + 10%).
+- [ ] **Life Buoys**: 2x Ring buoys (one with light).
+- [ ] **Fire Fighting**:
+    - Engine Room: Fixed auto-extinguisher (FM200 or Powder).
+    - Galley: Fire blanket + CO2.
+    - Cabins: 2kg Powder.
+- [ ] **Comms**: VHF Radio (Fixed) + Handheld backup.
+- [ ] **Signals**: Flares (Red hand, Parachute, Smoke).
+- [ ] **Anchor**: Main anchor + chain (as per Equipment Number calc).
+
+---
+
+## 6. Open Questions for Owner
+
+- **OQ-REG-01**: Will this be a "Commercial Charter" or "Private"? (Commercial requires far stricter fire/stability rules).
+- **OQ-REG-02**: Exact registration port? (Local interpretations vary).

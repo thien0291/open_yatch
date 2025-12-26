@@ -1,0 +1,13 @@
+Category,Load Description,Voltage,Power (W),Qty,Total (W),Duty Cycle (%),Daily Energy (kWh),Inverter Critical?
+Galley,Induction Cooktop,220V,2000,2,4000,10,0.4,No
+Galley,Refrigerator (Household),220V,150,1,150,40,1.44,Yes
+Galley,Microwave,220V,1200,1,1200,5,0.06,No
+Comfort,Air Conditioner (Split 9k),220V,900,4,3600,50,14.4,No
+Comfort,Water Heater,220V,2000,1,2000,10,0.2,No
+Lighting,LED Strings,220V/24V,200,1,200,30,0.6,Yes
+Outlets,Laptops/Phone,220V,100,5,500,50,2.0,Yes
+Pumps,Fresh Water Pump,220V,800,1,800,5,0.4,Yes
+Safety,Bilge Pumps (Primary),24V,100,6,600,0,0,Yes
+Nav,Chart Plotter/VHF,24V,50,1,50,100,1.2,Yes
+TOTALS,,,,,12100,,,20.7
+

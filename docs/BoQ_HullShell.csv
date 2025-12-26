@@ -1,11 +1,15 @@
-Item ID,Category,Description,Unit,Qty (Est),Unit Rate (USD),Total (USD),Confidence,Notes
-MAT-001,Resin,Polyester Resin (Drum),kg,3000,3,9000,Low,Est based on 35t boat * 0.4 FRP fraction
-MAT-002,Glass,E-Glass Chopped Strand Mat (CSM),kg,1000,2,2000,Low,
-MAT-003,Glass,E-Glass Woven Roving (WR),kg,1500,2.5,3750,Low,
-MAT-004,Core,PVC Foam 80kg/m3 (20mm),m2,200,30,6000,Low,For deck/superstructure
-MAT-005,Wood,Plywood (Marine Grade) for Bulkheads,sheet,50,40,2000,Low,
-CNS-001,Consumables,General (rollers, gloves, acetone),lot,1,1000,1000,Low,Rough allowance
-LAB-001,Labor,Lamination Crew,hours,2000,5,10000,Low,2000 hrs @ $5/hr (VN rate)
-LAB-002,Labor,Fairing/Sanding,hours,500,5,2500,Low,
-,,,,,36250,,S1 Rough Total
-
+Category,Item,Description,Unit,Qty,Unit Cost (USD),Total (USD),Confidence,Notes
+Material,Resin (Poly/Iso),Drum 220kg,kg,5000,2.50,12500,Med,Based on VN bulk price
+Material,Resin (Vinylester),Skin coat only,kg,1000,5.00,5000,Med,Osmosis barrier
+Material,Glass (CSM),Powder bound,kg,2000,2.20,4400,High,
+Material,Glass (Biax/WR),Structural fabric,kg,3000,2.80,8400,High,
+Material,Core (PVC Foam),80kg/m3 20mm,m2,250,22.00,5500,Med,Divinycell or equiv
+Material,Plywood (Marine),Bulkheads/Jigs,sheet,50,40.00,2000,High,
+Consumables,Vac Bag/Film,(If infusion used),set,1,1500.00,1500,Low,Optional
+Consumables,Rollers/Acetone,General,lot,1,2000.00,2000,Med,
+Tooling,Wood/MDF,Temporary molds/frames,lot,1,5000.00,5000,Low,For one-off build
+Labor,Laminators,Hand lay-up,hr,2500,5.00,12500,Med,Local VN rate
+Labor,Fairing/Finishing,Rough fairing only,hr,500,5.00,2500,Low,Keep minimal per Price-dead
+Totals,Base Cost,,,,,61300,,
+Totals,Contingency,,15%,,,9195,,
+Totals,GRAND TOTAL,,,,,70495,,Upper end of budget
