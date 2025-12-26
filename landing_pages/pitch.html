@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Yacht | Vision & Investment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    colors: {
+                        yacht: {
+                            black: '#0a0a0a',
+                            navy: '#0B1221',
+                            gold: '#D4AF37',
+                            sand: '#F5F5F0',
+                            charcoal: '#1A1A1A'
+                        }
+                    },
+                    letterSpacing: {
+                        'widest-xl': '.25em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B1221;
+            color: #F5F5F0;
+        }
+        .text-gold { color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        
+        /* Subtle fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-500 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body class="antialiased selection:bg-yacht-gold selection:text-yacht-navy">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 py-6 mix-blend-difference text-white">
+        <div class="max-w-[1800px] mx-auto px-8 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-2xl tracking-widest uppercase border-b border-transparent hover:border-white/50 transition-all duration-300">
+                Open<span class="font-light italic">Yacht</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-12">
+                <a href="pitch.html" class="text-xs tracking-[0.2em] uppercase text-yacht-gold">Vision</a>
+                <a href="features.html" class="text-xs tracking-[0.2em] uppercase hover:text-yacht-gold transition-colors duration-300">Specifications</a>
+                <a href="solutions.html" class="text-xs tracking-[0.2em] uppercase hover:text-yacht-gold transition-colors duration-300">Engineering</a>
+                <a href="#" class="text-xs tracking-[0.2em] uppercase border border-white/20 px-6 py-3 hover:bg-white hover:text-yacht-navy transition-all duration-300">
+                    Access PRD
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="relative pt-48 pb-32 px-8 bg-yacht-navy">
+        <div class="max-w-5xl mx-auto text-center fade-in">
+            <p class="text-yacht-gold text-xs tracking-[0.4em] uppercase mb-8">The Philosophy</p>
+            <h1 class="font-serif text-6xl md:text-8xl text-white mb-12 font-thin leading-none">
+                Redefining <br/><span class="italic">The Water</span>
+            </h1>
+            <p class="font-light text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed fade-in delay-300">
+                We observed a void in the market. Between the mass-produced fiberglass shells and the bespoke superyachts lies an opportunity: A 24m vessel engineered with the rigor of a ship and the soul of a gallery.
+            </p>
+        </div>
+    </header>
+
+    <!-- Market Fit Section -->
+    <section class="py-32 bg-yacht-charcoal border-t border-white/5">
+        <div class="max-w-[1600px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+            <div class="relative fade-in delay-300">
+                <div class="absolute -top-12 -left-12 text-[12rem] font-serif text-white/5 select-none">01</div>
+                <h2 class="font-serif text-5xl text-white mb-8 relative z-10">The Market Gap</h2>
+                <div class="space-y-6 text-gray-400 font-light leading-loose relative z-10">
+                    <p>
+                        Current river and nearshore cruisers often compromise on safety for aesthetics, or sacrifice livability for seaworthiness. They are built to minimum standards, not maximum safety.
+                    </p>
+                    <p>
+                        <strong class="text-white font-normal">The Open Yacht Proposition:</strong> A vessel that brings ocean-going safety standards (ISO Category A/B equivalent) to inland and coastal waters.
+                    </p>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 border-t border-white/10 pt-8">
+                    <div>
+                        <div class="text-3xl font-serif text-white mb-2">Vietnam</div>
+                        <div class="text-xs tracking-widest text-yacht-gold uppercase">Strategic Build Location</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-serif text-white mb-2">FRP</div>
+                        <div class="text-xs tracking-widest text-yacht-gold uppercase">Advanced Composites</div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative h-[600px] bg-black/20 border border-white/5 p-8 flex items-center justify-center fade-in delay-500">
+                <!-- Abstract chart/graph -->
+                <svg width="100%" height="100%" viewBox="0 0 400 300" class="opacity-40">
+                    <line x1="50" y1="250" x2="350" y2="250" stroke="white" stroke-width="1" />
+                    <line x1="50" y1="50" x2="50" y2="250" stroke="white" stroke-width="1" />
+                    <!-- Curve -->
+                    <path d="M50 200 C 100 200, 150 180, 200 100 C 250 20, 300 50, 350 30" fill="none" stroke="#D4AF37" stroke-width="2" />
+                    <circle cx="200" cy="100" r="4" fill="#D4AF37" />
+                    <text x="210" y="100" fill="white" font-family="Montserrat" font-size="10" letter-spacing="2">MARKET OPPORTUNITY</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment / Value Section -->
+    <section class="py-32 bg-yacht-navy relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-yacht-charcoal/30 -skew-x-12 transform translate-x-1/4"></div>
+        
+        <div class="max-w-[1600px] mx-auto px-8 relative z-10">
+            <div class="text-center mb-24">
+                <p class="text-yacht-gold text-xs tracking-[0.4em] uppercase mb-4">Investment Potential</p>
+                <h2 class="font-serif text-5xl md:text-6xl text-white">The Cost Advantage</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Card 1 -->
+                <div class="group border border-white/10 p-10 hover:border-yacht-gold/50 transition-colors duration-500 bg-yacht-charcoal/50 backdrop-blur-sm">
+                    <h3 class="font-serif text-2xl text-white mb-4">Local Sourcing</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed mb-8">
+                        Leveraging Vietnam's robust supply chain for resin and labor, significantly reducing the hull shell cost compared to European builds.
+                    </p>
+                    <span class="text-yacht-gold text-xs tracking-widest uppercase group-hover:underline">Read Analysis &rarr;</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group border border-white/10 p-10 hover:border-yacht-gold/50 transition-colors duration-500 bg-yacht-charcoal/50 backdrop-blur-sm">
+                    <h3 class="font-serif text-2xl text-white mb-4">Smart BOM</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed mb-8">
+                        Our AI-driven Bill of Materials ensures real-time cost tracking and scenario planning (Safe Minimum vs. Premium).
+                    </p>
+                    <span class="text-yacht-gold text-xs tracking-widest uppercase group-hover:underline">View BOM &rarr;</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group border border-white/10 p-10 hover:border-yacht-gold/50 transition-colors duration-500 bg-yacht-charcoal/50 backdrop-blur-sm">
+                    <h3 class="font-serif text-2xl text-white mb-4">Scalability</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed mb-8">
+                        The modular design allows for rapid adaptation from private luxury cruiser to high-end charter vessel.
+                    </p>
+                    <span class="text-yacht-gold text-xs tracking-widest uppercase group-hover:underline">Explore Models &rarr;</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="py-32 bg-yacht-black text-center border-t border-white/5">
+        <h2 class="font-serif text-4xl md:text-5xl text-white mb-8 italic">Join the Odyssey</h2>
+        <p class="text-gray-500 font-light mb-12 max-w-lg mx-auto">
+            Review the full Product Requirements Document and investment prospectus.
+        </p>
+        <a href="#" class="inline-block border border-white text-white px-10 py-4 text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-all duration-300">
+            Request Access
+        </a>
+    </section>
+
+    <!-- Shared Footer -->
+    <footer class="bg-yacht-navy pt-12 pb-12 border-t border-white/5">
+        <div class="max-w-[1800px] mx-auto px-8 flex justify-between items-center opacity-50">
+            <p class="text-xs uppercase tracking-wider">© 2024 Open Yacht Project</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-xs uppercase tracking-wider hover:text-white">Legal</a>
+                <a href="#" class="text-xs uppercase tracking-wider hover:text-white">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

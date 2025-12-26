@@ -13,6 +13,25 @@
 
 To reduce cost, we minimize 12/24V DC cabling and maximize 220V AC usage, allowing standard household appliances (Fridge, AC, TV, Cooking).
 
+### 1.0 Electrical Single Line Diagram (Concept)
+
+```
+[ Shore Power 32A ] --+--> [ Transfer Switch ] <---+-- [ Diesel Genset ]
+                      |                            |
+                      v                            |
+               [ AC Main Panel ] <--(Inverter)-- [ 48V Battery Bank ]
+                      |
+        +-------------+-------------+
+        |             |             |
+   [ BUS A ]     [ BUS B ]     [ 24V Charger ]
+  (Inverter)    (Shore/Gen)         |
+      |             |               v
+   - Fridge      - AirCon      [ 24V DC Panel ]
+   - Outlets     - Heater           |
+   - Lights                     - Bilge Pumps
+                                - Nav Lights
+```
+
 ### 1.1 Voltage Standards
 - **220V AC (50Hz)**: Primary house bus. Inverter supplied.
 - **24V DC**: "Critical & Safety" bus only (Bilge, Nav Lights, Electronics, Start Batteries).

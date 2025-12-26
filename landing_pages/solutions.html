@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Yacht | Engineering Whitepaper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&family=JetBrains+Mono:wght@100;400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        yacht: {
+                            black: '#050a14',
+                            navy: '#0B1221',
+                            gold: '#D4AF37',
+                            sand: '#F5F5F0',
+                            charcoal: '#1A1A1A',
+                            slate: '#2c3e50'
+                        }
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050a14;
+            color: #e2e8f0;
+        }
+        .text-gold { color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        .bg-gold { background-color: #D4AF37; }
+        
+        .blueprint-grid {
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Typography improvements */
+        h1, h2, h3, h4 { font-weight: 300; }
+        p { line-height: 1.8; }
+        
+        /* Sticky Sidebar */
+        .sticky-nav {
+            position: sticky;
+            top: 6rem;
+        }
+
+        /* SVG Animations */
+        @keyframes flow {
+            from { stroke-dashoffset: 20; }
+            to { stroke-dashoffset: 0; }
+        }
+        .flow-line {
+            stroke-dasharray: 4 2;
+            animation: flow 1s linear infinite;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-yacht-gold selection:text-yacht-navy">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 py-6 bg-yacht-navy/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-[1800px] mx-auto px-8 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-2xl tracking-widest uppercase hover:text-white transition-colors">
+                Open<span class="font-light italic text-yacht-gold">Yacht</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-12">
+                <a href="pitch.html" class="text-xs tracking-[0.2em] uppercase hover:text-yacht-gold transition-colors text-gray-400">Vision</a>
+                <a href="features.html" class="text-xs tracking-[0.2em] uppercase hover:text-yacht-gold transition-colors text-gray-400">Specifications</a>
+                <a href="solutions.html" class="text-xs tracking-[0.2em] uppercase text-yacht-gold border-b border-yacht-gold pb-1">Engineering</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-48 pb-32 px-8 bg-yacht-navy blueprint-grid relative border-b border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-end justify-between">
+                <div>
+                    <span class="font-mono text-yacht-gold text-xs mb-4 block">DOC_ID: TECH_WHITE_PAPER_V1</span>
+                    <h1 class="font-serif text-6xl md:text-8xl text-white italic leading-none mb-6">
+                        Engineering <br/> <span class="not-italic">Resolution</span>
+                    </h1>
+                </div>
+                <div class="max-w-md text-right">
+                    <p class="text-gray-400 font-light text-sm">
+                        A comprehensive analysis of the architectural, structural, and mechanical solutions employed in the 24m Open Yacht Project.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-[1800px] mx-auto px-8 py-24 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            
+            <!-- Sidebar Navigation -->
+            <div class="hidden lg:block lg:col-span-3">
+                <div class="sticky-nav space-y-8 border-l border-white/10 pl-8">
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono text-gray-500 uppercase">01. Architecture</span>
+                        <a href="#watertight" class="block font-serif text-xl text-white hover:text-yacht-gold transition-colors">Watertight Strategy</a>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono text-gray-500 uppercase">02. Structure</span>
+                        <a href="#structure" class="block font-serif text-xl text-gray-400 hover:text-yacht-gold transition-colors">Composite Grid</a>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono text-gray-500 uppercase">03. Propulsion</span>
+                        <a href="#propulsion" class="block font-serif text-xl text-gray-400 hover:text-yacht-gold transition-colors">Hybrid EREV</a>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono text-gray-500 uppercase">04. Systems</span>
+                        <a href="#electrical" class="block font-serif text-xl text-gray-400 hover:text-yacht-gold transition-colors">AC-First Grid</a>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono text-gray-500 uppercase">05. Build</span>
+                        <a href="#methodology" class="block font-serif text-xl text-gray-400 hover:text-yacht-gold transition-colors">BMAD Process</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-span-1 lg:col-span-9 space-y-48">
+
+                <!-- 1. WATERTIGHT STRATEGY -->
+                <section id="watertight" class="scroll-mt-32">
+                    <div class="flex items-center space-x-4 mb-12">
+                        <span class="text-4xl text-yacht-gold font-serif">01</span>
+                        <div class="h-px w-24 bg-yacht-gold"></div>
+                        <h2 class="text-4xl text-white font-light tracking-wide uppercase">Watertight Integrity</h2>
+                    </div>
+
+                    <div class="prose prose-invert max-w-none text-gray-300 font-light mb-16">
+                        <p class="text-lg">
+                            The primary failure mode for river and nearshore cruisers is "progressive flooding" following a collision or grounding event. Traditional designs often treat the hull as a single volume or rely on minimal bulkheads that do not extend above the waterline.
+                        </p>
+                        <p>
+                            The Open Yacht implements a rigorous <strong>7-Zone Compartmentation Strategy</strong> derived from SOLAS principles, ensuring the vessel remains afloat and stable with any single compartment breached.
+                        </p>
+                    </div>
+
+                    <!-- SVG Diagram: Flooding Plan -->
+                    <div class="bg-yacht-navy border border-white/10 p-8 mb-16 relative overflow-hidden group">
+                        <div class="absolute top-4 left-4 font-mono text-xs text-yacht-gold">FIG 1.1: WATERTIGHT ZONING PLAN</div>
+                        <svg class="w-full h-auto" viewBox="0 0 1000 350" fill="none" stroke="currentColor">
+                            <!-- Hull Outline -->
+                            <path d="M50 250 Q 300 350 950 250 L 950 100 L 50 100 Z" stroke="white" stroke-width="2" fill="#0B1221"/>
+                            <path d="M50 100 L 950 100" stroke="#334155" stroke-width="1"/> <!-- Deck Line -->
+                            
+                            <!-- Bulkheads (Vertical) -->
+                            <!-- Z1: Forepeak -->
+                            <line x1="850" y1="100" x2="850" y2="260" stroke="#D4AF37" stroke-width="2"/>
+                            <text x="880" y="180" fill="#94a3b8" font-family="monospace" font-size="12">Z1: VOID</text>
+                            
+                            <!-- Z2: Crew -->
+                            <line x1="750" y1="100" x2="750" y2="280" stroke="#D4AF37" stroke-width="2"/>
+                            <text x="780" y="180" fill="#94a3b8" font-family="monospace" font-size="12">Z2: CREW</text>
+                            
+                            <!-- Z3: Guest -->
+                            <line x1="600" y1="100" x2="600" y2="300" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+                            <text x="650" y="180" fill="#94a3b8" font-family="monospace" font-size="12">Z3: GUEST</text>
+                            
+                            <!-- Z4: Master -->
+                            <line x1="450" y1="100" x2="450" y2="310" stroke="#D4AF37" stroke-width="2"/>
+                            <text x="500" y="180" fill="#94a3b8" font-family="monospace" font-size="12">Z4: MASTER</text>
+                            
+                            <!-- Z5: Galley -->
+                            <line x1="300" y1="100" x2="300" y2="300" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+                            <text x="350" y="180" fill="#94a3b8" font-family="monospace" font-size="12">Z5: GALLEY</text>
+                            
+                            <!-- Z6: Engine -->
+                            <line x1="150" y1="100" x2="150" y2="280" stroke="#D4AF37" stroke-width="2"/>
+                            <text x="200" y="180" fill="#ef4444" font-family="monospace" font-size="12">Z6: ENG RM</text>
+                            
+                            <!-- Z7: Laz -->
+                            <text x="80" y="180" fill="#94a3b8" font-family="monospace" font-size="12">Z7: LAZ</text>
+                            
+                            <!-- Waterline -->
+                            <line x1="20" y1="220" x2="980" y2="220" stroke="#3b82f6" stroke-width="1" stroke-dasharray="10 5" opacity="0.5"/>
+                            <text x="960" y="210" fill="#3b82f6" font-family="monospace" font-size="10">DWL</text>
+                        </svg>
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-xs font-mono text-gray-500">
+                            <div>LEGEND: <span class="text-yacht-gold">―</span> Watertight Bulkhead</div>
+                            <div><span class="text-red-500">Z6</span> High Risk Zone</div>
+                            <div><span class="text-blue-500">---</span> Design Waterline</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <h3 class="text-xl text-white font-serif mb-4">Penetration Policy</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                "Swiss cheese" bulkheads defeat the purpose of compartmentation. We enforce a strict hierarchy for penetrations:
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm text-gray-400">
+                                <li class="flex items-start"><span class="text-yacht-gold mr-2">01.</span> Route all cables/pipes overhead (Deckhead) to avoid submarine penetrations.</li>
+                                <li class="flex items-start"><span class="text-yacht-gold mr-2">02.</span> Use certified glands or MCT blocks for all bulkhead transits. No silicone.</li>
+                                <li class="flex items-start"><span class="text-yacht-gold mr-2">03.</span> Steering gear in Z7 (Lazarette) isolated via watertight boots.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-serif mb-4">Bilge Redundancy</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Rather than relying solely on individual electric pumps which can clog or lose power, we employ a <strong>Central Manifold System</strong>. A high-capacity emergency pump (engine driven or manual) can draw from any zone via a selector manifold located in the cockpit.
+                            </p>
+                            <div class="mt-6 p-4 border border-white/5 bg-white/5 rounded">
+                                <div class="font-mono text-xs text-yacht-gold mb-2">PUMP CAPACITY (Z6 - ENGINE ROOM)</div>
+                                <div class="flex justify-between items-end">
+                                    <span class="text-white text-2xl font-serif">7,400 <span class="text-sm text-gray-500">GPH</span></span>
+                                    <span class="text-xs text-gray-500">Dual 3700 Primary</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="w-full h-px bg-white/5"></div>
+
+                <!-- 2. STRUCTURAL GRID -->
+                <section id="structure" class="scroll-mt-32">
+                     <div class="flex items-center space-x-4 mb-12">
+                        <span class="text-4xl text-yacht-gold font-serif">02</span>
+                        <div class="h-px w-24 bg-yacht-gold"></div>
+                        <h2 class="text-4xl text-white font-light tracking-wide uppercase">Composite Grid</h2>
+                    </div>
+
+                    <div class="prose prose-invert max-w-none text-gray-300 font-light mb-16">
+                        <p class="text-lg">
+                            The hull is built to ISO 12215 standards using a "hybrid core" strategy. We prioritize impact resistance in the lower sections and stiffness/weight optimization in the topsides.
+                        </p>
+                    </div>
+
+                    <!-- SVG Diagram: Laminate Schedule -->
+                    <div class="bg-yacht-navy border border-white/10 p-8 mb-16 relative overflow-hidden">
+                        <div class="absolute top-4 left-4 font-mono text-xs text-yacht-gold">FIG 2.1: HULL LAMINATE STACKUP</div>
+                        <svg class="w-full h-auto" viewBox="0 0 800 400" fill="none" stroke="currentColor">
+                            <!-- Background Grid -->
+                            <path d="M0 200 L 800 200" stroke="#334155" stroke-width="0.5"/>
+                            <text x="10" y="190" fill="#64748b" font-family="monospace" font-size="10">TOPSIDES (Sandwich)</text>
+                            <text x="10" y="220" fill="#64748b" font-family="monospace" font-size="10">BOTTOM (Solid)</text>
+
+                            <!-- Laminate Layers (Exploded View) -->
+                            
+                            <!-- Topsides (Sandwich) -->
+                            <rect x="100" y="50" width="200" height="10" fill="#1e293b" stroke="white" stroke-width="1"/>
+                            <text x="310" y="60" fill="white" font-family="monospace" font-size="10">Outer Skin (4mm)</text>
+                            
+                            <rect x="100" y="70" width="200" height="40" fill="#d4af37" fill-opacity="0.2" stroke="#d4af37" stroke-width="1"/>
+                            <text x="310" y="95" fill="#d4af37" font-family="monospace" font-size="10">PVC Foam Core (20mm)</text>
+                            
+                            <rect x="100" y="120" width="200" height="8" fill="#1e293b" stroke="white" stroke-width="1"/>
+                            <text x="310" y="130" fill="white" font-family="monospace" font-size="10">Inner Skin (3mm)</text>
+
+                            <!-- Bottom (Solid) -->
+                            <rect x="100" y="250" width="200" height="50" fill="#1e293b" stroke="white" stroke-width="1"/>
+                            <text x="310" y="280" fill="white" font-family="monospace" font-size="10">Solid GRP (18-24mm)</text>
+                            
+                            <!-- Keel Reinforcement -->
+                            <path d="M100 310 L 300 310 L 250 350 L 150 350 Z" fill="#334155" stroke="white" stroke-width="1"/>
+                            <text x="310" y="330" fill="#94a3b8" font-family="monospace" font-size="10">Keel Cap (UD Layers)</text>
+                        </svg>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-yacht-charcoal p-8">
+                            <span class="font-mono text-yacht-gold text-xs block mb-2">RESIN SYSTEM</span>
+                            <h4 class="text-white font-serif text-xl mb-2">Vinylester Skin</h4>
+                            <p class="text-gray-500 text-xs leading-relaxed">
+                                The outer 3 layers utilize Vinylester resin for superior osmosis protection and secondary bonding, backed by Isophthalic Polyester for structural bulk.
+                            </p>
+                        </div>
+                        <div class="bg-yacht-charcoal p-8">
+                            <span class="font-mono text-yacht-gold text-xs block mb-2">CORE MATERIAL</span>
+                            <h4 class="text-white font-serif text-xl mb-2">Closed Cell Foam</h4>
+                            <p class="text-gray-500 text-xs leading-relaxed">
+                                Topsides use PVC foam core to increase panel stiffness without weight. The bottom hull remains <strong>Solid GRP</strong> to eliminate delamination risk during groundings.
+                            </p>
+                        </div>
+                        <div class="bg-yacht-charcoal p-8">
+                            <span class="font-mono text-yacht-gold text-xs block mb-2">FRAMING</span>
+                            <h4 class="text-white font-serif text-xl mb-2">Longitudinal</h4>
+                            <p class="text-gray-500 text-xs leading-relaxed">
+                                A system of 4 hat-section stringers per side supports the hull panels, reducing the unsupported span and allowing for a lighter shell.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="w-full h-px bg-white/5"></div>
+
+                <!-- 3. PROPULSION -->
+                <section id="propulsion" class="scroll-mt-32">
+                    <div class="flex items-center space-x-4 mb-12">
+                        <span class="text-4xl text-yacht-gold font-serif">03</span>
+                        <div class="h-px w-24 bg-yacht-gold"></div>
+                        <h2 class="text-4xl text-white font-light tracking-wide uppercase">Hybrid Propulsion</h2>
+                    </div>
+
+                    <div class="prose prose-invert max-w-none text-gray-300 font-light mb-16">
+                        <p class="text-lg">
+                            To solve the cost/efficiency equation, we utilize a <strong>Serial Hybrid EREV</strong> (Extended Range Electric Vehicle) architecture. This decouples the engine from the propeller, allowing the diesel generator to run at its peak efficiency RPM regardless of boat speed.
+                        </p>
+                    </div>
+
+                    <!-- SVG Diagram: Drivetrain -->
+                    <div class="bg-yacht-navy border border-white/10 p-8 mb-16 relative overflow-hidden">
+                        <div class="absolute top-4 left-4 font-mono text-xs text-yacht-gold">FIG 3.1: EREV DRIVETRAIN SCHEMATIC</div>
+                        <svg class="w-full h-auto" viewBox="0 0 900 300" fill="none" stroke="currentColor">
+                            <!-- Generator -->
+                            <rect x="50" y="50" width="100" height="80" stroke="#ef4444" stroke-width="2"/>
+                            <text x="65" y="95" fill="white" font-family="monospace" font-size="12">GENSET</text>
+                            
+                            <!-- Flow Lines -->
+                            <path d="M150 90 L 250 90" stroke="#d4af37" stroke-width="2" class="flow-line"/>
+                            
+                            <!-- Inverter/Charger -->
+                            <rect x="250" y="50" width="120" height="80" stroke="white" stroke-width="2"/>
+                            <text x="270" y="95" fill="white" font-family="monospace" font-size="12">INVERTER</text>
+                            
+                            <!-- Battery -->
+                            <rect x="250" y="180" width="120" height="60" stroke="#3b82f6" stroke-width="2"/>
+                            <text x="280" y="215" fill="white" font-family="monospace" font-size="12">48V LFP</text>
+                            <path d="M310 130 L 310 180" stroke="#d4af37" stroke-width="2"/>
+                            
+                            <!-- Motor Controller -->
+                            <path d="M370 90 L 500 90" stroke="#d4af37" stroke-width="2" class="flow-line"/>
+                            <rect x="500" y="50" width="100" height="80" stroke="white" stroke-width="2"/>
+                            <text x="515" y="95" fill="white" font-family="monospace" font-size="12">MOTOR CTRL</text>
+                            
+                            <!-- Motor -->
+                            <path d="M600 90 L 650 90" stroke="#d4af37" stroke-width="2"/>
+                            <circle cx="700" cy="90" r="50" stroke="white" stroke-width="2"/>
+                            <text x="675" y="95" fill="white" font-family="monospace" font-size="12">E-MOTOR</text>
+                            
+                            <!-- Belt Drive -->
+                            <circle cx="700" cy="90" r="20" stroke="#64748b" stroke-width="1"/>
+                            <circle cx="700" cy="200" r="40" stroke="#64748b" stroke-width="1"/>
+                            <line x1="680" y1="90" x2="660" y2="200" stroke="#64748b" stroke-width="1" stroke-dasharray="2 2"/>
+                            <line x1="720" y1="90" x2="740" y2="200" stroke="#64748b" stroke-width="1" stroke-dasharray="2 2"/>
+                            
+                            <!-- Prop Shaft -->
+                            <line x1="700" y1="200" x2="850" y2="200" stroke="white" stroke-width="4"/>
+                            <path d="M850 180 L 850 220 L 880 200 Z" fill="white"/>
+                        </svg>
+                        <div class="mt-4 flex justify-between text-xs font-mono text-gray-500">
+                            <div>POWER SOURCE: <span class="text-red-500">DIESEL</span> / <span class="text-blue-500">BATTERY</span></div>
+                            <div>TRANSMISSION: BELT REDUCTION (3:1)</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm text-gray-400 leading-loose">
+                        <div>
+                            <strong class="text-white block mb-2">Donor Drivetrain Philosophy</strong>
+                            By repurposing high-volume automotive hybrid components (Motors, Inverters) instead of low-volume marine diesels, we achieve a 60% reduction in propulsion hardware costs. The system uses a belt-reduction drive to match the high-RPM electric motors to the efficient low-RPM propeller curve.
+                        </div>
+                        <div>
+                            <strong class="text-white block mb-2">Silent Running</strong>
+                            The battery buffer allows for 2-4 hours of completely silent cruising at low speeds (5-6 knots). The generator engages automatically only when the battery state-of-charge drops below 30% or when high power is commanded.
+                        </div>
+                    </div>
+                </section>
+
+                <div class="w-full h-px bg-white/5"></div>
+
+                <!-- 4. ELECTRICAL -->
+                <section id="electrical" class="scroll-mt-32">
+                    <div class="flex items-center space-x-4 mb-12">
+                        <span class="text-4xl text-yacht-gold font-serif">04</span>
+                        <div class="h-px w-24 bg-yacht-gold"></div>
+                        <h2 class="text-4xl text-white font-light tracking-wide uppercase">AC-First Grid</h2>
+                    </div>
+
+                    <div class="prose prose-invert max-w-none text-gray-300 font-light mb-16">
+                        <p class="text-lg">
+                            We term our electrical philosophy "The Floating Apartment." Instead of relying on expensive, heavy low-voltage (12/24V) DC cabling for house loads, we run a robust <strong>220V AC Backbone</strong>.
+                        </p>
+                    </div>
+
+                     <!-- SVG Diagram: Electrical -->
+                     <div class="bg-yacht-navy border border-white/10 p-8 mb-16 relative overflow-hidden">
+                        <div class="absolute top-4 left-4 font-mono text-xs text-yacht-gold">FIG 4.1: SINGLE LINE DIAGRAM</div>
+                        <svg class="w-full h-auto" viewBox="0 0 800 400" fill="none" stroke="currentColor">
+                            <!-- AC Bus -->
+                            <rect x="50" y="150" width="700" height="20" fill="#0f172a" stroke="white"/>
+                            <text x="350" y="165" fill="white" font-family="monospace" font-size="12">MAIN AC BUS (220V / 50Hz)</text>
+                            
+                            <!-- Inputs -->
+                            <line x1="100" y1="50" x2="100" y2="150" stroke="#d4af37" stroke-width="2"/>
+                            <text x="80" y="40" fill="#94a3b8" font-family="monospace" font-size="10">SHORE</text>
+                            
+                            <line x1="200" y1="50" x2="200" y2="150" stroke="#ef4444" stroke-width="2"/>
+                            <text x="180" y="40" fill="#94a3b8" font-family="monospace" font-size="10">GENSET</text>
+                            
+                            <line x1="300" y1="50" x2="300" y2="150" stroke="#3b82f6" stroke-width="2"/>
+                            <text x="270" y="40" fill="#94a3b8" font-family="monospace" font-size="10">INVERTER</text>
+
+                            <!-- Outputs -->
+                            <line x1="150" y1="170" x2="150" y2="300" stroke="white" stroke-width="1"/>
+                            <rect x="130" y="300" width="40" height="40" stroke="white"/>
+                            <text x="135" y="360" fill="white" font-family="monospace" font-size="10">HVAC</text>
+
+                            <line x1="250" y1="170" x2="250" y2="300" stroke="white" stroke-width="1"/>
+                            <rect x="230" y="300" width="40" height="40" stroke="white"/>
+                            <text x="225" y="360" fill="white" font-family="monospace" font-size="10">KITCHEN</text>
+
+                            <line x1="350" y1="170" x2="350" y2="300" stroke="white" stroke-width="1"/>
+                            <rect x="330" y="300" width="40" height="40" stroke="white"/>
+                            <text x="325" y="360" fill="white" font-family="monospace" font-size="10">OUTLETS</text>
+                            
+                            <!-- DC Side -->
+                            <rect x="500" y="250" width="200" height="10" fill="#334155" stroke="none"/>
+                            <text x="550" y="240" fill="#94a3b8" font-family="monospace" font-size="10">24V DC SAFETY BUS</text>
+                            <line x1="450" y1="170" x2="500" y2="250" stroke="#64748b" stroke-width="1" stroke-dasharray="2 2"/>
+                            <text x="460" y="200" fill="#64748b" font-family="monospace" font-size="8">CHARGER</text>
+                        </svg>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <h3 class="text-xl text-white font-serif mb-4">Residential Compatibility</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                By standardizing on 220V, we enable the use of high-volume residential appliances (Induction cooktops, Inverter Fridges, Split Air Conditioners) which are 1/4th the cost of "marine grade" equivalents and often more reliable/efficient.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-serif mb-4">Safety Layers</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Every AC circuit is protected by an <strong>RCBO</strong> (Residual Current Breaker with Overload). Wet zones (Galley, Head) use high-sensitivity 10mA trips. A full galvanic isolation transformer separates shore ground from hull ground to prevent corrosion.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="w-full h-px bg-white/5"></div>
+
+                 <!-- 5. BMAD -->
+                 <section id="methodology" class="scroll-mt-32">
+                    <div class="flex items-center space-x-4 mb-12">
+                        <span class="text-4xl text-yacht-gold font-serif">05</span>
+                        <div class="h-px w-24 bg-yacht-gold"></div>
+                        <h2 class="text-4xl text-white font-light tracking-wide uppercase">The Build Process</h2>
+                    </div>
+                    
+                    <div class="bg-yacht-charcoal p-12 border border-white/5">
+                        <h3 class="text-2xl text-white font-serif mb-8">BMAD: Build, Measure, Assess, Design</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div class="space-y-4">
+                                <span class="text-yacht-gold font-mono text-xl">B</span>
+                                <p class="text-gray-400 text-sm">We generate a complete "virtual build" including all bill of materials and cutting lists before a single sheet of plywood is purchased.</p>
+                            </div>
+                            <div class="space-y-4">
+                                <span class="text-yacht-gold font-mono text-xl">M</span>
+                                <p class="text-gray-400 text-sm">We measure the cost impact of every design decision using real-time local pricing from our Vietnam supply chain.</p>
+                            </div>
+                            <div class="space-y-4">
+                                <span class="text-yacht-gold font-mono text-xl">A</span>
+                                <p class="text-gray-400 text-sm">We assess the trade-offs. Does saving $500 on resin compromise the laminate impact strength? (The answer is always "Don't do it").</p>
+                            </div>
+                            <div class="space-y-4">
+                                <span class="text-yacht-gold font-mono text-xl">D</span>
+                                <p class="text-gray-400 text-sm">We refine the design. The result is a construction plan that is optimized for the specific skills and materials available at the yard.</p>
+                            </div>
+                        </div>
+                    </div>
+                 </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-yacht-navy pt-24 pb-12 border-t border-white/5">
+        <div class="max-w-[1800px] mx-auto px-8 flex justify-between items-center opacity-50">
+            <p class="text-xs uppercase tracking-wider">© 2024 Open Yacht Project</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-xs uppercase tracking-wider hover:text-white">Legal</a>
+                <a href="#" class="text-xs uppercase tracking-wider hover:text-white">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

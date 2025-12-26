@@ -180,9 +180,22 @@ Chốt concept hull form + GA + zoning khoang + strategy kính.
 * window module plan (repeatable sizes)
 * ring-frame concept around openings
   **Pass criteria**
-* Không đề xuất “1 tấm kính khổng lồ”; có mullions; tránh shear line.
-
-### Orchestrator Integrate (Gate 1 review)
+   183|* Không đề xuất “1 tấm kính khổng lồ”; có mullions; tránh shear line.
+   184|
+   185|### Task 1.4 — Digital Concept Showcase
+   186|
+   187|**Owner:** Software Engineer
+   188|**Inputs:** Hull form (Naval Architect), Glazing concept, Project Vision (Product Manager)
+   189|**Outputs:**
+   190|
+   191|* `docs/web/landing_page_concept.html` (or mockups)
+   192|* Vector illustrations of hull profile and layout
+   193|* "Coming Soon" page with project pitch
+   194|  **Pass criteria**
+   195|* Visuals align with Naval Architect's designs.
+   196|* Pitch clearly communicates the "Safety First, Cost Optimized" value proposition.
+   197|
+   198|### Orchestrator Integrate (Gate 1 review)
 
 **Orchestrator làm 4 việc:**
 
@@ -369,9 +382,22 @@ Có checklist giấy tờ/tài liệu & test plan để chạy thử an toàn.
 * `/docs/TestPlan.md`
 * Test matrix: Req → method → acceptance → evidence
   **Pass criteria**
-* Test coverage cho flooding, electrical, glazing leaks, stability checks.
-
-### Orchestrator Integrate (Gate 6 review)
+   372|* Test coverage cho flooding, electrical, glazing leaks, stability checks.
+   373|
+   374|### Task 6.3 — Project Launch Site
+   375|
+   376|**Owner:** Software Engineer
+   377|**Inputs:** All TDDs, Final Renderings, Test Results
+   378|**Outputs:**
+   379|
+   380|* Full static website (Landing, Features, Tech Specs, Pitch)
+   381|* Interactive diagrams (SVG) of safety systems
+   382|* Build log integration
+   383|  **Pass criteria**
+   384|* Site is live, mobile-responsive, and fast.
+   385|* Technical specs on site match the finalized PRD/TDDs.
+   386|
+   387|### Orchestrator Integrate (Gate 6 review)
 
 * Ensure every MUST requirement has at least one test method
 * Create ADR-005: “Operational limits nearshore” wording

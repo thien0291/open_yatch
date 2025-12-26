@@ -23,6 +23,23 @@ To fit a 24m yacht interior into a <$25k budget, we cannot use traditional marin
 
 ## 2. General Arrangement (Detailed)
 
+### 2.0 Deck Plan Visuals
+
+**LOWER DECK (In Hull)**
+```
+      Z7      Z6      Z5       Z4        Z3        Z2     Z1
+    [Laz]--[Eng]--[Galley]--[Master]--[Guest]--[Crew]--[Void]
+      |      |    | Util |  | Ensuite| |  |   |      |
+      |      |    |______|  |________| |__|   |______|
+```
+
+**MAIN DECK (Saloon)**
+```
+    [   Aft Cockpit   ] [     Saloon / Dining     ] [ Helm ]
+    |_________________| |_________________________| |______|
+                        <--    Panoramic Glass    -->
+```
+
 ### 2.1 Lower Deck (The "Hotel")
 *Access via spiral stair from Saloon (St 16).*
 

@@ -11,6 +11,38 @@
 
 ## 1. Design Philosophy & Hull Concept
 
+### 1.0 Visual Concept (ASCII Art)
+
+```
+        <-- AFT (Stern)                                  FWD (Bow) -->
+        
+        [    Upper Deck / Flybridge     ]
+       /_________________________________\
+       |    Main Deck / Panoramic       |
+       |  (Glass: St 5 - St 20)         |
+_______/_________________________________\________
+\                                                 \
+ \      HULL (Displacement Monohull)               \  <-- Flared Bow
+  \_________________________________________________\
+        ^               ^               ^
+   Wide Transom      Midship       Fine Entry
+   (Stability)       (Volume)      (Efficiency)
+   
+   CROSS SECTION (Midship):
+   
+         |     6.2m Beam     |
+       __|___________________|__  <-- Main Deck
+      |                         |
+      |      Interior Volume    |
+      |                         |
+      |_________________________|  <-- Sole (Floor)
+       \                       /
+        \                     /   <-- Hard Chine
+         \___________________/    <-- Shallow V Bottom
+                 ^
+            Small Skeg/Keel
+```
+
 To meet the "Price-dead" ($150k cap) and "Safe Minimum" constraints while delivering a 2-deck panoramic cruiser, the hull form prioritizes **developable surfaces**, **volume**, and **stability** over high-speed efficiency.
 
 ### 1.1 Geometry Strategy

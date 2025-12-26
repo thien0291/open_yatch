@@ -360,6 +360,31 @@ MVP excludes:
 
 ## 10) Project Plan & Gates
 
+### 10.1 Workflow Diagram
+
+```
+[ START ] --> [ Gate 0: PRD & Req Freeze ]
+                      |
+                      v
+              [ Gate 1: Concept Design ] --(Hull/GA/Zones)--> [ REVIEW ]
+                      |
+                      v
+              [ Gate 2: Engineering ] --(Structure/Weight)--> [ REVIEW ]
+                      |
+                      v
+              [ Gate 3: Costing ] --(BoQ/Est)--> [ GO/NO-GO ]
+                      |                              |
+                      | (If Budget OK) <-------------+
+                      v
+              [ Gate 4: Systems ] --(Elec/Prop)--> [ REVIEW ]
+                      |
+                      v
+              [ Gate 5: Build Plan ] --(QA/Seq)--> [ REVIEW ]
+                      |
+                      v
+              [ Gate 6: Compliance ] --(Regs/Test)--> [ DONE ]
+```
+
 * **Gate 0**: Requirements freeze (MVP) - **COMPLETE**
 * **Gate 1**: Hull structure design ready (Concept) - **COMPLETE**
 * **Gate 2**: Hull shell engineering complete - **COMPLETE**

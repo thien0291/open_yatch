@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Yacht | Specifications</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    colors: {
+                        yacht: {
+                            black: '#0a0a0a',
+                            navy: '#0B1221',
+                            gold: '#D4AF37',
+                            sand: '#F5F5F0',
+                            charcoal: '#1A1A1A'
+                        }
+                    },
+                    letterSpacing: {
+                        'widest-xl': '.25em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B1221;
+            color: #F5F5F0;
+        }
+        .text-gold { color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        
+        tr.spec-row td {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        tr.spec-row:last-child td {
+            border-bottom: none;
+        }
+        
+        .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
+        @keyframes fadeIn { to { opacity: 1; } }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="antialiased selection:bg-yacht-gold selection:text-yacht-navy">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 py-6 mix-blend-difference text-white">
+        <div class="max-w-[1800px] mx-auto px-8 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-2xl tracking-widest uppercase border-b border-transparent hover:border-white/50 transition-all duration-300">
+                Open<span class="font-light italic">Yacht</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-12">
+                <a href="pitch.html" class="text-xs tracking-[0.2em] uppercase hover:text-yacht-gold transition-colors duration-300">Vision</a>
+                <a href="features.html" class="text-xs tracking-[0.2em] uppercase text-yacht-gold">Specifications</a>
+                <a href="solutions.html" class="text-xs tracking-[0.2em] uppercase hover:text-yacht-gold transition-colors duration-300">Engineering</a>
+                <a href="#" class="text-xs tracking-[0.2em] uppercase border border-white/20 px-6 py-3 hover:bg-white hover:text-yacht-navy transition-all duration-300">
+                    Access PRD
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-48 pb-24 px-8 bg-yacht-navy border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end fade-in">
+            <div>
+                <p class="text-yacht-gold text-xs tracking-[0.4em] uppercase mb-6">Technical Data</p>
+                <h1 class="font-serif text-6xl text-white font-thin italic">Specifications</h1>
+            </div>
+            <p class="text-gray-500 font-light max-w-sm mt-8 md:mt-0 text-sm leading-relaxed text-right">
+                Preliminary technical specifications subject to final engineering validation.
+                Designed to ISO Category B standards.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Specs Grid -->
+    <section class="py-24 bg-yacht-charcoal">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                
+                <!-- Left Column: Dimensions -->
+                <div class="fade-in delay-300">
+                    <h2 class="font-serif text-3xl text-white mb-12">Dimensions</h2>
+                    <table class="w-full text-sm font-light">
+                        <tr class="spec-row">
+                            <td class="text-gray-400 uppercase tracking-widest">Length Overall (LOA)</td>
+                            <td class="text-right text-white font-mono">23.95 m</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="text-gray-400 uppercase tracking-widest">Beam Overall</td>
+                            <td class="text-right text-white font-mono">6.50 m</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="text-gray-400 uppercase tracking-widest">Draft (Full Load)</td>
+                            <td class="text-right text-white font-mono">1.25 m</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="text-gray-400 uppercase tracking-widest">Displacement (Light)</td>
+                            <td class="text-right text-white font-mono">48.5 t</td>
+                        </tr>
+                         <tr class="spec-row">
+                            <td class="text-gray-400 uppercase tracking-widest">Displacement (Full)</td>
+                            <td class="text-right text-white font-mono">58.0 t</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Right Column: Performance & Tankage -->
+                <div class="fade-in delay-300">
+                    <h2 class="font-serif text-3xl text-white mb-12">Performance & Capacities</h2>
+                    <table class="w-full text-sm font-light">
+                        <tr class="spec-row">
+                            <td class="text-gray-400 uppercase tracking-widest">Max Speed</td>
+                            <td class="text-right text-white font-mono">18.0 kn</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="text-gray-400 uppercase tracking-widest">Cruising Speed</td>
+                            <td class="text-right text-white font-mono">12.0 kn</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="text-gray-400 uppercase tracking-widest">Eco Cruise</td>
+                            <td class="text-right text-white font-mono">8.0 kn</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="text-gray-400 uppercase tracking-widest">Fuel Capacity</td>
+                            <td class="text-right text-white font-mono">4,500 L</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="text-gray-400 uppercase tracking-widest">Fresh Water</td>
+                            <td class="text-right text-white font-mono">1,200 L</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive: Propulsion -->
+    <section class="py-32 bg-yacht-navy relative overflow-hidden">
+        <!-- Background lines -->
+        <div class="absolute inset-0 flex justify-center space-x-32 opacity-10 pointer-events-none">
+            <div class="w-px h-full bg-white"></div>
+            <div class="w-px h-full bg-white"></div>
+            <div class="w-px h-full bg-white"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-5">
+                    <p class="text-yacht-gold text-xs tracking-[0.4em] uppercase mb-6">Propulsion</p>
+                    <h2 class="font-serif text-5xl text-white mb-8">Hybrid Drive <br/><span class="italic text-gray-500">Integration</span></h2>
+                    <p class="text-gray-400 font-light leading-relaxed mb-8">
+                        The Open Yacht utilizes a donor EREV architecture, coupling high-efficiency diesel generation with silent electric propulsion. 
+                    </p>
+                    <ul class="space-y-4 mb-12">
+                        <li class="flex items-center text-gray-300 font-light">
+                            <span class="w-2 h-2 bg-yacht-gold rounded-full mr-4"></span>
+                            2x 250kW Electric Motors
+                        </li>
+                        <li class="flex items-center text-gray-300 font-light">
+                            <span class="w-2 h-2 bg-yacht-gold rounded-full mr-4"></span>
+                            Variable Speed Generators
+                        </li>
+                        <li class="flex items-center text-gray-300 font-light">
+                            <span class="w-2 h-2 bg-yacht-gold rounded-full mr-4"></span>
+                            Silent Mode (Battery Only)
+                        </li>
+                    </ul>
+                    <a href="solutions.html" class="text-yacht-gold text-xs tracking-widest uppercase hover:text-white transition-colors">See Engineering &rarr;</a>
+                </div>
+                <div class="lg:col-span-7">
+                    <!-- Technical Drawing Placeholder -->
+                    <div class="aspect-video border border-white/20 bg-yacht-charcoal/50 p-8 relative group">
+                        <div class="absolute top-4 left-4 font-mono text-xs text-yacht-gold">DWG-PROP-001</div>
+                        <div class="w-full h-full flex items-center justify-center opacity-30 group-hover:opacity-60 transition-opacity duration-500">
+                             <svg class="w-full h-auto" viewBox="0 0 500 200" fill="none" stroke="currentColor">
+                                 <!-- Motor -->
+                                 <rect x="100" y="80" width="80" height="40" stroke="white" stroke-width="1"/>
+                                 <text x="110" y="105" fill="white" font-family="Montserrat" font-size="10">E-MOTOR</text>
+                                 <!-- Shaft -->
+                                 <line x1="180" y1="100" x2="350" y2="100" stroke="white" stroke-width="1"/>
+                                 <!-- Prop -->
+                                 <path d="M350 80 L350 120 M350 100 L370 90 M350 100 L370 110" stroke="white" stroke-width="1"/>
+                                 <!-- Gen -->
+                                 <rect x="50" y="140" width="60" height="40" stroke="white" stroke-width="1"/>
+                                 <text x="60" y="165" fill="white" font-family="Montserrat" font-size="10">GENSET</text>
+                             </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive: Glazing -->
+    <section class="py-32 bg-yacht-charcoal">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <p class="text-yacht-gold text-xs tracking-[0.4em] uppercase mb-6">Exterior</p>
+                <h2 class="font-serif text-5xl text-white">Panoramic Vision</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-1 border-t border-white/5">
+                <div class="py-12 px-8 border-r border-white/5 hover:bg-white/5 transition-colors duration-500">
+                    <h3 class="font-serif text-2xl text-white mb-4">Material</h3>
+                    <p class="text-gray-500 font-light text-sm">Chemically toughened laminated glass with IR-reflective coating.</p>
+                </div>
+                <div class="py-12 px-8 border-r border-white/5 hover:bg-white/5 transition-colors duration-500">
+                    <h3 class="font-serif text-2xl text-white mb-4">Integration</h3>
+                    <p class="text-gray-500 font-light text-sm">Flush-bonded to FRP superstructure for aerodynamic profile and leak-proof seal.</p>
+                </div>
+                <div class="py-12 px-8 hover:bg-white/5 transition-colors duration-500">
+                    <h3 class="font-serif text-2xl text-white mb-4">Coverage</h3>
+                    <p class="text-gray-500 font-light text-sm">Over 45 sqm of glazing in the main salon alone, offering 270-degree views.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-yacht-navy pt-24 pb-12 border-t border-white/5">
+        <div class="max-w-[1800px] mx-auto px-8 flex justify-between items-center opacity-50">
+            <p class="text-xs uppercase tracking-wider">© 2024 Open Yacht Project</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-xs uppercase tracking-wider hover:text-white">Legal</a>
+                <a href="#" class="text-xs uppercase tracking-wider hover:text-white">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

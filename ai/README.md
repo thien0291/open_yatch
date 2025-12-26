@@ -30,6 +30,7 @@ ai/
 │   ├── regulatory_consultant.md          # Compliance and certification
 │   ├── test_trials_engineer.md           # Testing and sea trials
 │   ├── product_manager.md                # Requirements and project management
+│   ├── software_engineer.md              # Web presence, pitch, and vector graphics
 │   └── orchestrator.md                   # System coordination and integration
 ├── tasks/
 │   └── overall.md               # Complete orchestration workflow
@@ -131,6 +132,12 @@ The system aims to produce all critical project documentation in a single coordi
 - Stakeholder coordination and communication
 - Scope control and change management
 - Success criteria definition and tracking
+
+#### Software Engineer (`software_engineer.md`)
+- Static website design (HTML/CSS)
+- Landing page, pitch, features, and solutions pages
+- Vector graphics creation based on engineering designs
+- Technical visualization for non-technical stakeholders
 
 ### System Orchestrator (`orchestrator.md`)
 - Overall project coordination and integration

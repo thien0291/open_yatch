@@ -13,6 +13,22 @@
 
 To achieve the "Price-Dead" goal while moving a ~40t vessel, we utilize a **Donor Hybrid / EREV (Extended Range Electric Vehicle)** approach rather than buying new marine diesels ($30k+ each).
 
+### 1.0 Serial Hybrid Layout Visual
+
+```
+      [ Diesel Gen ]        [ Battery Bank ]
+            |                      |
+            v (220V/48V)           v (48V Buffer)
+      [ Charge/Dist ] <---> [ Motor Controller ]
+                                   |
+                                   v
+                            [ Electric Motor ]
+                                   |
+                               [ Belt Drive ] (3:1 Redux)
+                                   |
+      [ Propeller ] <----------[ Shaft ]
+```
+
 ### 1.1 The Donor Concept
 - **Source**: Salvaged EV/PHEV drivetrain (e.g., BYD DM-i, Mitsubishi Outlander PHEV, or similar mass-produced industrial hybrid gen-set).
 - **Configuration**: **Serial Hybrid** (Electric Propulsion + Diesel Generator).

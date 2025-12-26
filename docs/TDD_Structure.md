@@ -13,6 +13,23 @@
 
 To minimize tooling costs (no huge full-hull mold if possible, or simple female mold) and maximize safety, we use a **Longitudinal Framing System** supported by **Transverse Ring Frames**.
 
+### 1.0 Structural Visual Concept
+
+```
+       [ Deck Sandwich ]
+      /_________________\  <-- Gunwale / Sheer
+      |                 |
+      | [Side Sandwich] |  <-- Ring Frames every ~1m
+      |                 |
+      |_________________|  <-- Chine (Solid Glass - No Core)
+       \               /
+        \ [Solid FRP] /    <-- Longitudinal Stringers
+         \___________/     <-- Keel (Reinforced)
+
+Laminate Stack (Hull Bottom - Z2/Z3):
+[ Gelcoat ] -> [ Skin Coat (VE) ] -> [ Structural Layers (Poly) ] -> [ Stringer ]
+```
+
 ### 1.1 Structural Hierarchy (Load Paths)
 1.  **Global Beam**: The hull acts as a box beam.
     - *Top Flange*: Deck edge (Gunwale) and Sheer clamp.

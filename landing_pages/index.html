@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Yacht | The Art of Naval Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    colors: {
+                        yacht: {
+                            black: '#0a0a0a',
+                            navy: '#0B1221',
+                            gold: '#D4AF37',
+                            sand: '#F5F5F0',
+                            charcoal: '#1A1A1A'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    },
+                    letterSpacing: {
+                        'widest-xl': '.25em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B1221;
+            color: #F5F5F0;
+        }
+        .text-gold {
+            color: #D4AF37;
+        }
+        .border-gold {
+            border-color: #D4AF37;
+        }
+        .bg-gold {
+            background-color: #D4AF37;
+        }
+        
+        /* Elegant line animations */
+        .line-reveal {
+            position: relative;
+            overflow: hidden;
+        }
+        .line-reveal::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: rgba(212, 175, 55, 0.3);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .line-reveal:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .luxury-gradient {
+            background: linear-gradient(180deg, rgba(11,18,33,0) 0%, rgba(11,18,33,1) 100%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-yacht-gold selection:text-yacht-navy">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 py-6 mix-blend-difference text-white">
+        <div class="max-w-[1800px] mx-auto px-8 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl tracking-widest uppercase border-b border-transparent hover:border-white/50 transition-all duration-300">
+                Open<span class="font-light italic">Yacht</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-12">
+                <a href="pitch.html" class="text-xs tracking-[0.2em] uppercase hover:text-yacht-gold transition-colors duration-300">Vision</a>
+                <a href="features.html" class="text-xs tracking-[0.2em] uppercase hover:text-yacht-gold transition-colors duration-300">Specifications</a>
+                <a href="solutions.html" class="text-xs tracking-[0.2em] uppercase hover:text-yacht-gold transition-colors duration-300">Engineering</a>
+                <a href="#" class="text-xs tracking-[0.2em] uppercase border border-white/20 px-6 py-3 hover:bg-white hover:text-yacht-navy transition-all duration-300">
+                    Access PRD
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Subtle Background Texture/Video Placeholder -->
+        <div class="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center opacity-40 grayscale"></div>
+        <div class="absolute inset-0 z-0 bg-yacht-navy/60"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+            <p class="text-yacht-gold text-xs md:text-sm tracking-[0.4em] uppercase mb-8 font-light animate-fade-in-up">The 24m Project</p>
+            <h1 class="font-serif text-5xl md:text-8xl lg:text-9xl text-white mb-8 font-thin italic leading-none">
+                Symmetry <br/><span class="not-italic font-light">in Motion</span>
+            </h1>
+            <div class="w-24 h-[1px] bg-yacht-gold mx-auto mb-10"></div>
+            <p class="font-sans font-light text-gray-300 max-w-xl mx-auto text-sm md:text-base leading-relaxed tracking-wide">
+                A masterpiece of safety-first engineering. Redefining the standard for river and nearshore cruising through the synthesis of BMAD methodology and uncompromising luxury.
+            </p>
+            
+            <div class="mt-16">
+                <a href="pitch.html" class="inline-block relative px-8 py-4 border border-yacht-gold/30 text-yacht-gold text-xs tracking-[0.3em] hover:bg-yacht-gold hover:text-yacht-navy transition-all duration-500 uppercase">
+                    Discover
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-50">
+            <span class="text-[10px] tracking-[0.3em] mb-4 uppercase">Scroll</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Vision / Introduction -->
+    <section id="vision" class="py-32 bg-yacht-navy relative">
+        <div class="max-w-[1800px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-5 relative">
+                <div class="aspect-[3/4] border border-white/5 p-8 relative">
+                    <!-- Decorative Lines -->
+                    <div class="absolute top-0 left-0 w-32 h-[1px] bg-yacht-gold"></div>
+                    <div class="absolute top-0 left-0 w-[1px] h-32 bg-yacht-gold"></div>
+                    
+                    <div class="w-full h-full bg-yacht-charcoal flex items-center justify-center overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+                         <!-- Abstract Hull Lines SVG -->
+                         <svg class="w-full h-full opacity-30" viewBox="0 0 100 200" fill="none" stroke="currentColor">
+                            <path d="M50 0 C 80 20, 100 80, 50 200 C 0 80, 20 20, 50 0" stroke="white" stroke-width="0.2"/>
+                            <path d="M50 20 C 70 40, 80 80, 50 180 C 20 80, 30 40, 50 20" stroke="white" stroke-width="0.1"/>
+                            <path d="M50 40 C 60 50, 70 80, 50 160 C 30 80, 40 50, 50 40" stroke="white" stroke-width="0.1"/>
+                         </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-1"></div>
+            
+            <div class="lg:col-span-6">
+                <h2 class="font-serif text-5xl text-white mb-12 font-light">
+                    Where <span class="italic text-yacht-gold">Safety</span> Meets <br/>
+                    Sublime Design
+                </h2>
+                <div class="space-y-8 font-light text-gray-400 leading-loose">
+                    <p>
+                        The Open Yacht project is not merely a vessel; it is a statement of intent. Engineered in Vietnam, it leverages the precision of the BMAD (Build, Measure, Assess, Design) methodology to achieve a level of finish and safety rarely seen in its class.
+                    </p>
+                    <p>
+                        From the panoramic glazing that dissolves the boundary between guest and ocean, to the AC-first electrical architecture providing silent, robust power – every detail is calculated.
+                    </p>
+                </div>
+                
+                <div class="mt-16 grid grid-cols-2 gap-12">
+                    <div>
+                        <div class="font-serif text-4xl text-white mb-2">24<span class="text-yacht-gold text-lg align-top">m</span></div>
+                        <div class="text-xs tracking-[0.2em] text-gray-500 uppercase">LOA</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-4xl text-white mb-2">Hybrid</div>
+                        <div class="text-xs tracking-[0.2em] text-gray-500 uppercase">Propulsion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications / Features -->
+    <section id="specifications" class="py-32 bg-yacht-charcoal">
+        <div class="max-w-[1800px] mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-white/5 pb-8">
+                <h3 class="font-serif text-4xl md:text-5xl font-light text-white">Technical <br/><span class="italic text-gray-500">Mastery</span></h3>
+                <p class="text-xs tracking-[0.2em] text-yacht-gold uppercase mt-8 md:mt-0">Design Phase 01</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
+                <!-- Feature 1 -->
+                <div class="bg-yacht-charcoal p-12 hover:bg-yacht-navy transition-colors duration-500 group">
+                    <span class="text-yacht-gold font-serif text-2xl block mb-6">01</span>
+                    <h4 class="text-white text-lg tracking-widest uppercase mb-4 group-hover:translate-x-2 transition-transform duration-300">Watertight Integrity</h4>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed group-hover:text-gray-400 transition-colors">
+                        Multi-compartment zoning strategy ensuring absolute buoyancy and safety under failure scenarios. No compromises.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-yacht-charcoal p-12 hover:bg-yacht-navy transition-colors duration-500 group border-l border-white/5">
+                    <span class="text-yacht-gold font-serif text-2xl block mb-6">02</span>
+                    <h4 class="text-white text-lg tracking-widest uppercase mb-4 group-hover:translate-x-2 transition-transform duration-300">Panoramic Glazing</h4>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed group-hover:text-gray-400 transition-colors">
+                        Structurally integrated glazing modules offering uninterrupted 270° vistas while maintaining hull rigidity.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-yacht-charcoal p-12 hover:bg-yacht-navy transition-colors duration-500 group border-l border-white/5">
+                    <span class="text-yacht-gold font-serif text-2xl block mb-6">03</span>
+                    <h4 class="text-white text-lg tracking-widest uppercase mb-4 group-hover:translate-x-2 transition-transform duration-300">Electrical Architecture</h4>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed group-hover:text-gray-400 transition-colors">
+                        AC-First 220V system with donor hybrid drive integration. Quiet, efficient, and reliable power management.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Showcase (Parallax feel) -->
+    <section class="h-[80vh] bg-[url('https://images.unsplash.com/photo-1605281317010-fe5ffe79b9b7?q=80&w=2600&auto=format&fit=crop')] bg-fixed bg-cover bg-center relative">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center">
+                <p class="text-white font-serif italic text-3xl md:text-5xl tracking-wide opacity-90">"The details are not the details.</p>
+                <p class="text-white font-serif text-3xl md:text-5xl tracking-wide mt-2 opacity-90">They make the design."</p>
+                <p class="text-yacht-gold text-xs tracking-[0.3em] uppercase mt-8">— Charles Eames</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-yacht-navy pt-24 pb-12 border-t border-white/5">
+        <div class="max-w-[1800px] mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#" class="font-serif text-3xl text-white block mb-8">Open<span class="italic text-yacht-gold">Yacht</span></a>
+                    <p class="text-gray-500 font-light max-w-sm leading-relaxed">
+                        A new paradigm in custom vessel construction. Safety, sustainability, and silence.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white text-xs tracking-[0.2em] uppercase mb-8">Engineering</h5>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-500 hover:text-white transition-colors font-light text-sm">Hull Form</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-white transition-colors font-light text-sm">Propulsion</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-white transition-colors font-light text-sm">Electrical</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-white transition-colors font-light text-sm">Structure</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white text-xs tracking-[0.2em] uppercase mb-8">Project</h5>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-500 hover:text-white transition-colors font-light text-sm">Vision</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-white transition-colors font-light text-sm">Team</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-white transition-colors font-light text-sm">Investment</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-white transition-colors font-light text-sm">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5">
+                <p class="text-gray-600 text-xs tracking-wider uppercase">© 2024 Open Yacht Project</p>
+                <div class="flex space-x-8 mt-4 md:mt-0">
+                    <span class="text-gray-600 text-xs tracking-wider uppercase">Privacy</span>
+                    <span class="text-gray-600 text-xs tracking-wider uppercase">Legal</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

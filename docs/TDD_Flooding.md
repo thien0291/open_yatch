@@ -13,6 +13,19 @@
 
 The vessel utilizes a **7-Zone Watertight Compartmentation** strategy. The goal is to survive the complete flooding of any **single** compartment (1-compartment damage stability) and limit progressive flooding.
 
+### 1.0 Compartmentation Visual Map
+
+```
+STATION:  0     3     7     11    15    19    22.5   24 (Bow)
+          |     |     |     |     |     |     |      |
+          | Z7  | Z6  | Z5  | Z4  | Z3  | Z2  |  Z1  |
+   AFT -> | Laz | Eng | Gal | Mas | Gst | Crw | Void | -> FWD
+          |_____|_____|_____|_____|_____|_____|______|
+             ^     ^     ^     ^     ^     ^     ^
+          Steer   Mech  Sump  Sump  Step  Door  Crash
+                                                 Box
+```
+
 ### 1.1 Zone Definitions & Critical Boundaries
 
 | Zone ID | Station Range | Boundary Type | Risk Level | Protection Strategy |
